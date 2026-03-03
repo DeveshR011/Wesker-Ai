@@ -14,7 +14,6 @@ A modular PyTorch framework combining:
 
 ---
 
-## What's New in v2.0.0
 
 ### 1. Complex 3D-Like Environment (`complex_environment.py`)
 Dropped-in replacement for the base `SurvivalEnv` with richer world state:
