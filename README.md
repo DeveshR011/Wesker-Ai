@@ -1,4 +1,4 @@
-# **Wesker AI** 
+# Wesker AI 🧠⚔️
 **Research-grade hierarchical survival optimization AI.**
 
 A modular PyTorch framework combining:
@@ -111,11 +111,19 @@ flowchart TD
     PolicyLayer -->|"Prior"| MCTS
     MCTS -->|"Selected Action"| Env["Survival Environment"]
     
-    style Obs fill:#e1f5fe,stroke:#01579b
-    style Stress fill:#fff3e0,stroke:#e65100
-    style Tactical Agent fill:#f3e5f5,stroke:#4a148c
-    style MCTS fill:#e8f5e9,stroke:#1b5e20
-    style Env fill:#ffebee,stroke:#b71c1c
+    style Obs fill:#00b4d8,stroke:#0096c7,color:#000
+    style Stress fill:#f77f00,stroke:#d62828,color:#000
+    style Enc fill:#4361ee,stroke:#023e8a,color:#fff
+    style CausalTrans fill:#4361ee,stroke:#023e8a,color:#fff
+    style PolicyLayer fill:#ffd166,stroke:#e9a800,color:#000
+    style ValueHead fill:#4895ef,stroke:#023e8a,color:#fff
+    style QuantileHead fill:#fca311,stroke:#c77700,color:#000
+    style PolicyLoss fill:#9b5de5,stroke:#6a0dad,color:#fff
+    style VAE fill:#06d6a0,stroke:#028a5b,color:#000
+    style LatentTrans fill:#06d6a0,stroke:#028a5b,color:#000
+    style RewardPred fill:#06d6a0,stroke:#028a5b,color:#000
+    style MCTS fill:#06d6a0,stroke:#028a5b,color:#000
+    style Env fill:#ef233c,stroke:#b5002a,color:#fff
 ```
 
 ## The Survival Model: A Theoretical Framework
@@ -187,6 +195,16 @@ flowchart LR
     
     Sigma -->|Softmax Noise| Decision["Suboptimal Action choices"]
     Sigma -->|Threshold| Freeze["Cognitive Freeze (Action Delay)"]
+
+    style Danger fill:#ef233c,stroke:#b5002a,color:#fff
+    style Scarcity fill:#ef233c,stroke:#b5002a,color:#fff
+    style InfoOverload fill:#ef233c,stroke:#b5002a,color:#fff
+    style TimePressure fill:#ef233c,stroke:#b5002a,color:#fff
+    style Decay fill:#4895ef,stroke:#023e8a,color:#fff
+    style Update fill:#f77f00,stroke:#d62828,color:#000
+    style Sigma fill:#00b4d8,stroke:#0096c7,color:#000
+    style Decision fill:#ffd166,stroke:#e9a800,color:#000
+    style Freeze fill:#9b5de5,stroke:#6a0dad,color:#fff
 ```
 
 ```python
@@ -243,6 +261,13 @@ flowchart LR
     Quantiles -->|Sort & Slice| Tail["Worst α% fraction"]
     Tail --> Mean["Mean(Tail) = CVaR_α"]
     Mean --> PG["Policy Advantage A_t^CVaR"]
+
+    style Returns fill:#4895ef,stroke:#023e8a,color:#fff
+    style DistRL fill:#9b5de5,stroke:#6a0dad,color:#fff
+    style Quantiles fill:#fca311,stroke:#c77700,color:#000
+    style Tail fill:#ef233c,stroke:#b5002a,color:#fff
+    style Mean fill:#f77f00,stroke:#d62828,color:#000
+    style PG fill:#06d6a0,stroke:#028a5b,color:#000
 ```
 
 Standard RL optimizes E[R], ignoring catastrophic edge cases. We use Distributional RL (Quantile Regression) to predict the full return distribution `Z(s,a)`. 
