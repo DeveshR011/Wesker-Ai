@@ -13,7 +13,7 @@ A modular PyTorch framework combining:
 - **[v2.0.0]** Human-in-the-Loop guidance with reward shaping
 
 ---
-
+#**Features**
 
 ### 1. Complex 3D-Like Environment (`complex_environment.py`)
 Dropped-in replacement for the base `SurvivalEnv` with richer world state:
